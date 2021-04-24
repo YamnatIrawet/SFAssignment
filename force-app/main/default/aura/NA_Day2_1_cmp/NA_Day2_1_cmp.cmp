@@ -1,0 +1,66 @@
+<aura:component  implements="flexipage:availableForRecordHome,force:hasRecordId" controller="getAccOpportunities_cls">
+    <aura:handler name="init" value="{!this}" action="{!c.getOpportunities}" />
+    <aura:attribute name="isTrue" type="boolean" default="false"/>
+    <aura:attribute name="oppList" type="Opportunity[]" />
+    <lightning:card title="Opportunity list" iconName="standard:opportunity">
+<lightning:button variant="brand" aura:id="test1" label="Show list" title="show" onclick="{!c.handleClick}" />
+<lightning:button variant="destructive" aura:id="test2" label="hide list" title="hide" onclick="{!c.handleClick}" />
+    <aura:if isTrue="{!v.isTrue}">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead class="header">
+            <tr  class="slds-line-height_reset header">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Id">Opportunity Id</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Stage Name">Stage Name</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Amount">Amount</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Type">Type</div>
+                </th>
+            </tr> 
+            </thead>
+        <tbody>
+    <aura:iteration items="{!v.oppList}" var="eachOpportunity">        
+            <tr class="slds-hint-parent">
+                <td data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Name">{#eachOpportunity.Name}</div>
+                </td>
+                <td data-label="Opportunity Id">
+                    <div class="slds-truncate" title="Id">{#eachOpportunity.Id}</div>
+                </td>
+                <td data-label="Stage Name">
+                    <div class="slds-truncate" title="Name">{#eachOpportunity.StageName}</div>
+                </td>
+                <td data-label="Amount">
+                    <div class="slds-truncate" title="Amount">{#eachOpportunity.Amount}</div>
+                </td>
+                <td data-label="Type">
+                    <div class="slds-truncate" title="Type">{#eachOpportunity.Type}</div>
+                </td>
+            </tr>  
+    </aura:iteration>  
+        </tbody>  
+        <tfoot class="footer">
+            <tr class="slds_footer_tr">
+              <td >Footer</td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+            </tr>
+          </tfoot>    
+        </table>
+
+   <!-- <aura:set attribute="else">
+        No Opportunities found
+    </aura:set> -->
+    </aura:if>
+    </lightning:card>
+</aura:component>

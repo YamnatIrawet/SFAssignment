@@ -1,0 +1,38 @@
+<aura:component controller="getOppByName_cls">
+    <aura:handler name="cmpEvt" event="c:NA_Day7_OppComp_evt" action="c.setOppList" />
+    <lightning:button variant="brand" aura:id="test1" label="Show list" title="show" onclick="{!c.getoppt}" />
+    <aura:attribute name="op" type="opportunity[]" />
+    <aura:attribute name="oc" type="contact[]" />
+    <c:FacetComponent1_cmp>
+        <aura:set attribute="opList">
+            <table>
+                <aura:iteration items="{!v.op}" var="eachOpportunity">  
+                    <tr>
+                        <td data-label="Opportunity Name">
+                            {#eachOpportunity.Name}
+                        </td>
+                        <td data-label="Opportunity Id">
+                            {#eachOpportunity.Id}
+                        </td>
+                        <td data-label="Stage Name">
+                            {#eachOpportunity.StageName}
+                        </td>
+                        <td data-label="Amount">
+                            {#eachOpportunity.Amount}
+                        </td>
+                        <td data-label="Type">
+                            {#eachOpportunity.Type}
+                        </td>
+                    </tr>
+                </aura:iteration>  
+            </table>
+        </aura:set>
+        ===================================
+        <aura:set attribute="ocList">
+            <c:contact_list_cmp ocList="{!v.oc}"/>
+        </aura:set>
+        <aura:set attribute="test1">
+            hello
+        </aura:set>    
+    </c:FacetComponent1_cmp>
+</aura:component>

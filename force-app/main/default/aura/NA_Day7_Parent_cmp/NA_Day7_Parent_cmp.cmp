@@ -1,0 +1,132 @@
+<aura:component>
+    <aura:attribute name="isoTrue" type="boolean" default="false"/>
+    <aura:attribute name="iscTrue" type="boolean" default="false"/>
+    <aura:attribute name="parentAttribute" type="String" default="This is just a test"/>
+    <aura:handler name="cmpEvt" event="c:NA_Day7_OppComp_evt" action="c.setOppList" />
+    <aura:attribute name="opList" type="opportunity[]" />
+    <aura:attribute name="ocList" type="contact[]" />
+    <lightning:card title=" Day 7 Assignment" iconName="action:new_note">
+    </lightning:card>
+        <h2 class="header">Enter Opportunity Name in this search box</h2>
+ <lightning:input name="parentAttribute" value="{!v.parentAttribute}" />
+    <c:NA_Day7_Child_cmp  childAttribute="{!v.parentAttribute}" />
+    <br /> ///////////////////////////Opportunity based on above child response////////////////////////////////// <br />
+    <lightning:card title=" Opportunities shown in Parent component:" iconName="standard:opportunity">
+    <aura:if isTrue="{!v.isoTrue}">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead class="header">
+            <tr  class="slds-line-height_reset header">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Id">Opportunity Id</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Stage Name">Stage Name</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Amount">Amount</div>
+                </th>
+                <th  class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Type">Type</div>
+                </th>
+            </tr> 
+            </thead>
+        <tbody>
+    <aura:iteration items="{!v.opList}" var="eachOpportunity">        
+            <tr class="slds-hint-parent">
+                <td data-label="Opportunity Name">
+                    <div class="slds-truncate" title="Name">{#eachOpportunity.Name}</div>
+                </td>
+                <td data-label="Opportunity Id">
+                    <div class="slds-truncate" title="Id">{#eachOpportunity.Id}</div>
+                </td>
+                <td data-label="Stage Name">
+                    <div class="slds-truncate" title="Name">{#eachOpportunity.StageName}</div>
+                </td>
+                <td data-label="Amount">
+                    <div class="slds-truncate" title="Amount">{#eachOpportunity.Amount}</div>
+                </td>
+                <td data-label="Type">
+                    <div class="slds-truncate" title="Type">{#eachOpportunity.Type}</div>
+                </td>
+            </tr>  
+    </aura:iteration>  
+        </tbody>  
+        <tfoot class="footer">
+            <tr class="slds_footer_tr">
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+            </tr>
+          </tfoot>    
+        </table>
+        <aura:set attribute="else">
+        No Opportunities found
+    </aura:set>
+    </aura:if>
+</lightning:card>
+
+<br /> ///////////////////////////contacts based on above child response////////////////////////////////// <br />
+<lightning:card title=" contacts shown in Parent component:" iconName="standard:contact">
+<aura:if isTrue="{!v.iscTrue}">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead class="header">
+        <tr  class="slds-line-height_reset header">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="contact Name">contact Name</div>
+            </th>
+            <th  class="" scope="col">
+                <div class="slds-truncate" title="contact Phone">contact Phone</div>
+            </th>
+            <th  class="" scope="col">
+                <div class="slds-truncate" title="Department">Department</div>
+            </th>
+            <th  class="" scope="col">
+                <div class="slds-truncate" title="Lead Source">Lead Source</div>
+            </th>
+            <th  class="" scope="col">
+                <div class="slds-truncate" title="Birth Date">Birth Date</div>
+            </th>
+        </tr> 
+        </thead>
+    <tbody>
+<aura:iteration items="{!v.ocList}" var="eachContact">        
+        <tr class="slds-hint-parent">
+            <td data-label="Contact Name">
+                <div class="slds-truncate" title="Name">{#eachContact.Name}</div>
+            </td>
+            <td data-label="Contact Phone">
+                <div class="slds-truncate" title="Phone">{#eachContact.Phone}</div>
+            </td>
+            <td data-label="Contact Department">
+                <div class="slds-truncate" title="Department">{#eachContact.Department}</div>
+            </td>
+            <td data-label="Contact LeadSource">
+                <div class="slds-truncate" title="LeadSource">{#eachContact.LeadSource}</div>
+            </td>
+            <td data-label="Contact Birthdate">
+                <div class="slds-truncate" title="Birthdate">{#eachContact.Birthdate}</div>
+            </td>
+        </tr>  
+</aura:iteration>  
+    </tbody>  
+    <tfoot class="footer">
+        <tr class="slds_footer_tr">
+          <td ></td>
+          <td ></td>
+          <td ></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+      </tfoot>    
+    </table>
+    <aura:set attribute="else">
+    No Contacts found
+</aura:set>
+</aura:if>
+</lightning:card>
+</aura:component>

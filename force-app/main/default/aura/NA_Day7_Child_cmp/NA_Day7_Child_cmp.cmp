@@ -1,0 +1,10 @@
+<aura:component  controller="getOppByName_cls">
+    <aura:attribute name="childAttribute" type="String" />
+    <aura:attribute name="oppList" type="Opportunity[]" />
+    <aura:attribute name="conList" type="Contact[]" />
+    <aura:registerEvent name="cmpEvt" type="c:NA_Day7_OppComp_evt" />
+    <lightning:card title=" This is Child component" iconName="action:preview">
+    <lightning:button variant="brand" aura:id="test1" label="Show list" title="show" onclick="{!c.getOpportunities}" />
+    <!-- ==value in the child ==>{!v.childAttribute} -->
+</lightning:card>
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component>
+    <aura:attribute name="test1" type="Aura.Component[]" />
+    <aura:attribute name="test2" type="Aura.Component[]" />
+       <aura:attribute name="opList" type="Aura.Component[]" />
+    <aura:attribute name="ocList" type="Aura.Component[]" />
+    <div>
+       
+    <p>{!v.test2}</p> 
+    <p>{!v.test1}</p>
+    </div>
+{!v.opList}
+    !!!!!!! {!v.body}!!!!!!
+            {!v.ocList}
+</aura:component>

@@ -1,0 +1,23 @@
+<aura:component>
+    <aura:attribute name="AEValue" type="String" />
+    <!-- Button to fire application event -->
+    <aura:registerEvent name="AE" type="c:AE_evt" />
+    <aura:handler event="c:AE_evt" action="{!c.handleAppevent}" phase="capture" />
+    <div class="divClass">Inside AE 2 component
+        <lightning:button onclick="{!c.fireAE}">Fire Application Event</lightning:button>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-5  slds-align-middle">
+           <lightning:input type="toggle" label="Stop Propogation" name="stp" aura:id="stpId2" checked="false" /></div>
+           <div class="slds-col slds-size_2-of-5  slds-align-middle">
+           <lightning:input type="toggle" label="Prevent default" name="std"  aura:id="stdId2" checked="false" /></div>
+        </div>
+        AE event value: {!v.AEValue}
+        <div class="slds-grid">
+        <div class="slds-col slds-size_3-of-5  slds-align-middle">
+        <c:AE_2_1_cmp /></div>
+        <div class="slds-col slds-size_1-of-5  slds-align-middle">
+        <c:AE_2_2_cmp /></div>
+    </div>
+    </div>
+
+</aura:component>

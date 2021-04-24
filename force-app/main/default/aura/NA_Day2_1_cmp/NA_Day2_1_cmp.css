@@ -1,0 +1,13 @@
+.THIS .footer {
+    background-color:rgb(38, 206, 228);
+    color:white;
+    
+}
+.THIS .slds_footer_tr {
+    height:10px;
+}
+.THIS .header th {
+    background-color:rgb(38, 206, 228);
+    color:white;
+    height:50px;
+}

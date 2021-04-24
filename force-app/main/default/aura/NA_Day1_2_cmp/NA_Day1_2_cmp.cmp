@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="label" type="String" default="Hello" />
+    <aura:handler name="init" value="{!this}" action="c.handleInit" />
+    <h1>{!v.label}
+    </h1>
+    <b><h1>{!v.recordId}</h1></b>  
+    
+</aura:component>

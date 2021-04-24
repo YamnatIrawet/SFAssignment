@@ -1,0 +1,12 @@
+<aura:component controller="oppList_cls" >
+    <aura:handler name='init' value="{!this}" action="{!c.doInit}"/>
+    <aura:method name="sampleMethod" action="{!c.doAction}" 
+                 description="Sample method with parameters"> 
+    </aura:method>
+    <aura:attribute name="AccountId" type="string"/>
+    <aura:attribute name="oppList" type="opportunity[]"/>    
+    <aura:iteration items="{!v.oppList}" var="item">
+		Opportunity Name : ====>>   {!item.Name}    
+        <br/>
+    </aura:iteration>
+</aura:component>

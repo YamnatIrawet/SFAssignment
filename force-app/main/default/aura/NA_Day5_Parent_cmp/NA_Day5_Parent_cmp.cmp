@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="childReturnValue" type="String" default="Return message" />
+    <lightning:card title=" Day 5 Assignment" iconName="action:new_note">
+        <lightning:card title=" 5.1" >
+        <p>Synchronous Method example==> Parent component calls aura:method in child component</p>
+        
+        <lightning:button label="Call aura:method in child component"
+            onclick="{! c.callChildMethod1}" />
+            <p>Return value is : {!v.childReturnValue}</p>            
+            <c:NA_Day5_1_cmp aura:id="child1" />   
+        </lightning:card>
+        <lightning:card title=" 5.2" >
+
+        </lightning:card>     
+    </lightning:card>
+</aura:component>

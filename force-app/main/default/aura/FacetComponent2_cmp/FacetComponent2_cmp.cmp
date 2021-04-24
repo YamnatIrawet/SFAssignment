@@ -1,0 +1,11 @@
+<aura:component >
+    <c:FacetComponent1_cmp>
+        <aura:set attribute="test2">
+            how are you 
+        </aura:set>
+        ===================================
+        <aura:set attribute="test1">
+       	hello
+        </aura:set>    
+    </c:FacetComponent1_cmp>
+</aura:component>

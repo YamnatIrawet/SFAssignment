@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="title" type="Aura.component[]" />
+    <aura:attribute name="footer" type="Aura.component[]"/>
+    test
+    <section>
+        <div><span></span>{!v.title}</div>
+        <div><span> </span>{!v.body}</div>
+        <div><span></span>{!v.footer}</div>
+    </section>
+    
+</aura:component>

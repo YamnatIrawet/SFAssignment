@@ -1,0 +1,38 @@
+.THIS {
+}
+h1.THIS{
+    text-align : center;
+    color: Black;
+    line-height: 20px;
+    background-color: AliceBlue; /*Bisque*/
+    font: 15px Arial,sans-serif;
+}
+
+.THIS .h1class{
+    color:Teal;
+    background-color:Beige ;
+     line-height: 190px;
+    font:italic small-caps bold 12px/30px Georgia, serif;
+}
+.THIS#p1tag{
+    text-align : center;
+    color: MediumTurquoise;
+    line-height: 20px;
+    background-color: LightSlateGray; /*Bisque*/
+    font: 15px Arial,sans-serif;
+}
+
+.THIS .p2cls{
+    text-align : justify;
+    color: Maroon;
+    line-height: 20px;
+    background-color: MediumVioletRed; /*Bisque*/
+    font: 15px Arial,sans-serif;
+}
+b.THIS{
+    background-color:BlanchedAlmond ;
+    color: Sienna;
+    text-align: justify;
+    font-size: 36px;
+    line-height: 40px;
+}

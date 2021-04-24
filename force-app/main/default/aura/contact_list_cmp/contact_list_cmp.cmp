@@ -1,0 +1,24 @@
+<aura:component >
+    <aura:attribute name="ocList" type="contact[]" />
+	<table>
+          <aura:iteration items="{!v.ocList}" var="eachContact">  
+              <tr>
+                  <td data-label="Contact Name">
+                <div class="slds-truncate" title="Name">{#eachContact.Name}</div>
+            </td>
+            <td data-label="Contact Phone">
+                <div class="slds-truncate" title="Phone">{#eachContact.Phone}</div>
+            </td>
+            <td data-label="Contact Department">
+                <div class="slds-truncate" title="Department">{#eachContact.Department}</div>
+            </td>
+            <td data-label="Contact LeadSource">
+                <div class="slds-truncate" title="LeadSource">{#eachContact.LeadSource}</div>
+            </td>
+            <td data-label="Contact Birthdate">
+                <div class="slds-truncate" title="Birthdate">{#eachContact.Birthdate}</div>
+            </td>
+           </tr>
+    </aura:iteration>  
+</table>
+</aura:component>

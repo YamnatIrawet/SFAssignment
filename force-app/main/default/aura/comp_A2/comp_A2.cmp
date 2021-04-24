@@ -1,0 +1,7 @@
+<aura:component>
+   <!--  <aura:registerEvent name="CmpEvt_A" type="c:CE_A" />   
+    <aura:handler name="init" value="{!this}" action="c.doInit" /> -->
+    <aura:handler name="CmpEvt_A" event="c:CE_A" action="{!c.handleBubbling}" phase="bubble"/>
+    <aura:handler name="CmpEvt_A" event="c:CE_A" action="{!c.handleCompEvent}" phase="capture"/>
+<c:comp_A1 />
+</aura:component>

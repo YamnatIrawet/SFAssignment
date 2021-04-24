@@ -1,0 +1,7 @@
+.THIS.divClass {
+    margin-top: 10px;
+    margin-left: 10px;
+    height:100px; width:600px; 
+    color:rgba(25, 8, 180, 0.795); border:2px solid; background-color: rgba(247, 214, 224, 0.493);
+    border: 1px solid red;
+}

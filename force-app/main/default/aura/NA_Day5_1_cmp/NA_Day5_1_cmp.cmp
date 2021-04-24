@@ -1,0 +1,11 @@
+<aura:component>
+  <aura:attribute name="value" type="boolean" default="false" />
+    <aura:method name="getParentDetails"
+    description="Simple Synchronous attribute trasnfer">
+      <aura:attribute name="acb" type="boolean" default="false" />
+      <aura:attribute name="accId" type="String" default="default message1" />
+  </aura:method>
+  <aura:if isTrue="{!v.value}" >
+    <p>This line now visible is result of second parameter </p>
+  </aura:if>
+</aura:component>

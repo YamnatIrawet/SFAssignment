@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="string"/>
+    <c:NA_Day5_2_cmp AccountId="{!v.recordId}" aura:id="childOpptList"/>
+    <lightning:button variant="success" label="Refresh" title="Success" onclick="{! c.handleClick }"/>
+</aura:component>

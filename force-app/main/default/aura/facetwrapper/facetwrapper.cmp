@@ -1,0 +1,32 @@
+<aura:component controller="FacetController">
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    <aura:attribute name="toggle" type="Boolean" default="true"/>
+    <aura:attribute name="org" type="contact[]" default=""/> 
+    
+    <section>
+        <aura:if isTrue="{!v.toggle}">
+            <div>
+                <div>
+                    <c:AuraFacet aura:id="f1">
+                        <aura:set attribute="title">
+                            <ui:outputText value="Salesforce Lightning Component Title "/>
+                        </aura:set>
+                       
+                         <aura:set attribute="body">
+                            <ui:outputText value="Salesforce Lightning Component Body"/>
+                        </aura:set>
+                       
+                        
+                        <aura:set attribute="footer">
+                            <p> This is a test footer </p>
+                             
+                        </aura:set>
+                        
+                    </c:AuraFacet>
+                </div>
+                
+            </div>
+        </aura:if>
+        <ui:button label="ToggleIf" press="{!c.toggle}" />
+    </section>
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable" >
+    <aura:attribute name="showText" type="String" default="Hello" />
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}" />
+    <aura:attribute name="state" type="String" default="India" />
+    <aura:attribute name="town" type="String" default= "Gila Bend111" />
+    <h1>Lightning component</h1>
+    <p>
+        <h1 class= "h1class">hi {!v.showText}</h1>
+    </p>
+    <b>{!v.state} mayor declares state of emergency, says Biden admin sending busloads of illegal immigrants to his town.
+    </b>
+    <div id="p1tag">
+    The mayor of an {!v.state} town has declared a state of emergency, claiming that Joe Biden's administration sent him 
+    busloads of illegal immigrants while struggling to accommodate thousands of arrivals in a deepening border crisis.
+    <p class="p2cls">{!v.town}, {!v.state}, is a town of less than 2,000 people</p>, located halfway between the state capital of Phoenix and 
+    Sonoyta, a village on the Mexican side of the border. Mayor Chris Riggs told Fox News on Monday that for the past 
+    two weeks, Border Patrol agents have been dropping off busloads of illegal immigrants in {#v.town}, with no further 
+    instruction from the government on what to do with them.
+    </div>
+</aura:component>
