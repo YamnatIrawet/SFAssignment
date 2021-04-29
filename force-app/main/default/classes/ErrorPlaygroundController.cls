@@ -20,7 +20,12 @@ public with sharing class ErrorPlaygroundController {
     @AuraEnabled
     public static void triggerCustomAuraHandledError() {
         // Best practice: user-friendly error message and custom error data
-        CustomAuraExceptionData data = new CustomAuraExceptionData('MyCustomServerError', 'Some message about the error', 123);
-        throw new AuraHandledException(JSON.serialize(data));
+        string Eresult;
+        try{integer a=1/0;}
+        catch(Exception e){
+        CustomAuraExceptionData data = new CustomAuraExceptionData();
+        Eresult = data.CAEfill(e.getTypeName(), e.getMessage(), e.getLineNumber());
+        System.debug('error result'+Eresult);
+        throw new AuraHandledException(JSON.serialize(data));}
     }
 }
