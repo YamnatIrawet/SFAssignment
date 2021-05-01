@@ -1,0 +1,15 @@
+<aura:component implements="lightning:actionOverride,lightning:hasPageReference" access="global" >
+
+    <lightning:pageReferenceUtils aura:id="pageRefUtils"/>
+    <p>New opportunity override form</p>
+    <lightning:recordEditForm
+                    objectApiName="Opportunity"
+                    onload="{!c.handleLoadonCreate}">
+        <lightning:messages />
+        <lightning:inputField aura:id="OpportunityNamefield" fieldName="Name"/>
+        <lightning:inputField aura:id="AccountNameField" fieldName="AccountId"/>
+        <lightning:inputField aura:id="amountField" fieldName="amount"/>
+        <lightning:inputField aura:id="OrderNumberField" fieldName="OrderNumber__c"/>
+        <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+    </lightning:recordEditForm>
+</aura:component>
