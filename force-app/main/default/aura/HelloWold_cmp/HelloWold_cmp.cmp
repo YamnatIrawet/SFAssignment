@@ -1,0 +1,71 @@
+<!--<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,
+                            clients:availableForMailAppAppPage,clients:hasItemContext,-->
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,clients:availableForMailAppAppPage,clients:hasItemContext,force:hasSObjectName,force:hasRecordId"
+                            controller="EmailCompController_cmp" access="global">
+        <aura:attribute name="greeting" type="String" default="Hello" access="global" />
+        <aura:attribute name="subject" type="String" default="World" access="global" />
+		<aura:attribute name="source" type="String" />
+ 		<aura:attribute name="mode" type="String" />
+    <aura:attribute name="from" type="String" />
+    <aura:attribute name="cc" type="Object" />
+    <aura:attribute name="to" type="Object" default="{ name: 'a,b,c', email: 'test@gmail.com,abc@gmail.com,def@gmail.com' }" />
+    	<aura:attribute name="people" type="Object" default="{
+    to: [ { name: 'a,b,c', email: 'test@gmail.com,abc@gmail.com,def@gmail.com' }, ... ],
+    cc: [ ... ],
+    from: { name: 'test abc', email: 'test@gmail.com' },
+}"/>
+    
+        <div class="slds-box">
+          <span class="greeting">{!v.greeting}</span>, {!v.subject}!
+        </div>
+    
+     
+<!--
+    Add these handlers to customize what happens when the attributes change
+    <aura:handler name="change" value="{!v.subject}" action="{!c.handleSubjectChange}" />
+    <aura:handler name="change" value="{!v.people}" action="{!c.handlePeopleChange}" />
+-->
+ 
+    <div id="content">
+          <aura:if isTrue="{!v.mode == 'edit'}">
+            You are composing the following Item: <br/>
+            <aura:set attribute="else">
+                You are reading the following Item: <br/>
+            </aura:set>
+        </aura:if>
+ 
+        <h1><b>Email subject</b></h1>
+        <span id="subject">{!v.subject}</span>
+ 
+        <h1>To:</h1>
+        <aura:iteration items="{!v.people.to}" var="to">
+            {!to.name} - {!to.email} <br/>
+        </aura:iteration>
+ 
+        <h1>From:</h1>
+        {!v.people.from.name} - {!v.people.from.email}
+ 
+        <h1>CC:</h1>
+        <aura:iteration items="{!v.people.cc}" var="cc">
+            {!cc.name} - {!cc.email} <br/>
+        </aura:iteration>
+ 
+        <span class="greeting">New Email Arrived</span>, {!v.subject}!
+    </div>
+    <!--
+This component handles the email context on initialization. 
+It retrieves accounts and opportunities based on the email addresses included 
+in the email recipients list. 
+It then calculates the account and opportunity ages based on when the accounts 
+were created and when the opportunities will close.
+-->
+        <aura:handler name="init" value="{!this}" action="{!c.handlePeopleChange}" />
+    <aura:attribute name="accounts" type="List" />
+    <aura:attribute name="opportunities" type="List" />
+    <aura:iteration items="{!v.accounts}" var="acc">
+            {!acc.name} => {!acc.age}
+    </aura:iteration>
+    <aura:iteration items="{!v.opportunities}" var="opp">
+            {!opp.name} => {!opp.closesIn} Days till closing
+    </aura:iteration>
+    </aura:component>

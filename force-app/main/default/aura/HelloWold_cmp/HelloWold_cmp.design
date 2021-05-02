@@ -1,0 +1,9 @@
+<design:component label="Hello World">
+    <design:attribute name="subject" label="Subject" description="Name of the person you want to greet" />
+    <design:attribute name="greeting" label="Greeting" />
+    <!--<design:attribute name="source" label="Source Label" />
+ 	<design:attribute name="mode" label="Mode label" />
+    <design:attribute name="to" label="to Label" />
+ 	<design:attribute name="from" label="from label" />
+    <design:attribute name="cc" label="cc label" />-->
+</design:component>

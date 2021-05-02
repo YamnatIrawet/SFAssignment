@@ -1,0 +1,4 @@
+<design:component>
+        <design:attribute name="propertyType" label="Select from below Value:" datasource="apex://MyCustomPicklist_cls"/>
+     <design:attribute name="colorType" label="Select any color:" datasource="apex://MyCustomColorPickList_cls"/>
+</design:component>
