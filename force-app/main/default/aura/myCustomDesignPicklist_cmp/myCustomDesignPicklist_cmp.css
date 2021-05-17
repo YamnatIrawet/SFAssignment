@@ -1,2 +1,5 @@
-.THIS {
-}
+.THIS#deco {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }

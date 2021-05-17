@@ -1,0 +1,54 @@
+<aura:component access="global" implements="lightning:availableForFlowScreens">
+    <aura:attribute name="chkbox1" type="Boolean" />
+    <aura:attribute name="chkbox2" type="Boolean" />
+    <aura:attribute name="course_date" type="Date" />
+	<aura:attribute name="myRVal" type="String" />
+    <aura:attribute name="cName" type="String" />
+    <!-- Determine which actions are available -->
+    <aura:attribute name="canPause" type="Boolean"/>
+    <aura:attribute name="canBack" type="Boolean" />
+    <aura:attribute name="canNext" type="Boolean" />
+    <aura:attribute name="canFinish" type="Boolean" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div class="divClass"><lightning:formattedText value="Please fill the below form" /></div>
+    <br/>
+    <lightning:input type="checkbox" label="Course was an addon to your existing skills" name="chkbox1" value="{!v.chkbox1}" />
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning:input type="date" name="course_date" label="Start of the course Date" value="{!v.course_date}" />
+        </div>
+        <div class="slds-col">
+            <lightning:input name="cName" label="Survey filler Name" value="{!v.cName}"/>
+        </div>
+        
+    </div> 
+    <lightning:input type="checkbox" label="your time and effort was worth spend" name="chkbox2" value="{v.chkbox2}" />
+    <lightning:inputRichText value="{!v.myRVal}" placeholder="Improvement Suggesions"/>
+    
+    <!-- Below is code to show navigation buttons -->
+    <div aura:id="actionButtonBar" class="slds-clearfix slds-p-top_medium">
+        <!-- If Previous is available, display to the left -->
+        <div class="slds-float_left">
+            <aura:if isTrue="{!v.canBack}">
+                <lightning:button aura:id="BACK" label="Previous"
+                                  variant="neutral" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+        </div>
+        <div class="slds-float_right">
+            <!-- If Pause, Next, or Finish are available, display to the right -->
+            <aura:if isTrue="{!v.canPause}">
+                <lightning:button aura:id="PAUSE" label="Pause"
+                                  variant="neutral" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+            <aura:if isTrue="{!v.canNext}">
+                <lightning:button aura:id="NEXT" label="Next" 
+                                  variant="brand" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+            <aura:if isTrue="{!v.canFinish}">
+                <lightning:button aura:id="FINISH" label="Done"
+                                  variant="brand" onclick="{!c.onButtonPressed}" />
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

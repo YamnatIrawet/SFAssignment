@@ -1,7 +1,7 @@
 <aura:component implements="flexipage:availableForAllPageTypes">
     <aura:attribute name="propertyType" type="String" />
        <aura:attribute name="colorType" type="String" />
-    <div class="slds-text-heading_large" style ="{!'color:' + v.colorType}">
+    <div class="slds-text-heading_large" id="deco" style ="{!'color:' + v.colorType}">
     selected value is: {!v.propertyType} 
     </div>
 </aura:component>

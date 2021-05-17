@@ -1,0 +1,35 @@
+<aura:component implements="lightning:appHomeTemplate" description="Main bar on the top with
+ left column and right column beneath it. On a phone or desktop, the left and right regions are of ratio 30:70">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="left" type="Aura.Component[]" />
+    <aura:attribute name="right" type="Aura.Component[]" />
+ 
+ <!--   <div>
+        <lightning:layout>
+            <lightning:layoutItem flexibility="grow"
+            class="slds-m-right_small">
+                {!v.header}
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="grow"
+                                  class="slds-m-right_small">
+                {!v.left}
+        </lightning:layoutItem>
+        <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '6' }"
+                                  class="slds-m-left_small">
+                {!v.right}
+        </lightning:layoutItem>
+        </lightning:layout>
+    </div>   -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_12-of-12">
+            <span>{!v.header}</span>
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+            <span>{!v.left}</span>
+        </div>
+        <div class="slds-col slds-size_8-of-12">
+            <span>{!v.right}</span>
+        </div>        
+    </div>
+    
+</aura:component>

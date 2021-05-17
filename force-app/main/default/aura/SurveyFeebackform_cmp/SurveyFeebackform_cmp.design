@@ -1,0 +1,7 @@
+<design:component>
+    <design:attribute name="cName" label="contact Name" description="Name of the person" />
+    <design:attribute name="chkbox1" label="chk1" description="checkbox1" />
+    <design:attribute name="chkbox2" label="chk2" description="checkbox2" />
+    <design:attribute name="course_date" label="course Date" description="Date of course completion" />
+    <design:attribute name="myRVal" label="Suggestions" description="Suggestions by the form filler" />
+</design:component>
